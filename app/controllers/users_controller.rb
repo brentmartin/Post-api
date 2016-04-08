@@ -12,24 +12,24 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    # respond_with @user = User.new                                     # in API
+    # render json: @user = User.new                                     # in API
   end
 
   def create
     @user = User.new
     @user.save
-    # respond_with @user = User.new(username: params[:user][:username]) # in API
+    # render json: @user = User.new(username: params[:user][:username]) # in API
   end
 
   def edit
     @user = User.find(params[:id])
-    # respond_with @user                                                # in API
+    # render json: @user                                                # in API
   end
 
   def update
     User.update(params[:id])
     # @user.update(user_params)                                         # in API
-    # respond_with @user                                                # in API
+    # render json: @user                                                # in API
     # rescue ActiveRecord::RecordNotFound                               # in API
     #   render json: { message: "Not Found", status: 404}, status: 404  # in API
   end
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     # @user.destroy                                                     # in API
-    # respond_with @user.destroy                                        # in API
+    # render json: @user.destroy                                        # in API
     # rescue ActiveRecord::RecordNotFound                               # in API
     #   render json: { message: "Not Found", status: 404}, status: 404  # in API
   end

@@ -12,19 +12,19 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    # respond_with @post = Post.new                                # From API # from responder gem
+    # render json: @post = Post.new                                # From API # from responder gem
   end
 
   def create
     @post = Post.new
     # @post.body = params[:post][:body]                            # From API
     # @post.save                                                   # From API
-    # respond_with @post = Post.new(post = params[:post][:body])   # From API # from responder gem
+    # render json: @post = Post.new(post = params[:post][:body])   # From API # from responder gem
   end
 
   def edit
     @post = Post.find(param[:id])
-    # respond_with @post                                           # From API # from responder gem
+    # render json: @post                                           # From API # from responder gem
   end
 
   def update
@@ -38,7 +38,7 @@ class PostsController < ApplicationController
     @post = Post.find(param[:id])
     @post.destroy
     # @post.destroy                                                 # From API
-    # respond_with @post.destroy                                    # From API # from responder gem
+    # render json: @post.destroy                                    # From API # from responder gem
     # rescue ActiveRecord::RecordNotFound                           # From API
       #  render json: { message: "Not Found", status: 404}, status: 404 # From API
   end
