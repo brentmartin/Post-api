@@ -1,5 +1,4 @@
 class Api::PostsController < ApplicationController
-  # respond_to :json                                      # For Responder gem
   def index
     # @posts = Post.all                                   # in controllers
     render json: @posts
