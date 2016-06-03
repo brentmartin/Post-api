@@ -20,8 +20,6 @@ class Api::PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update(post_params)
-    rescue ActiveRecord::RecordNotFound
-       render json: { message: "Not Found", status: 404}, status: 404
     render json: @post
   end
 
@@ -29,8 +27,6 @@ class Api::PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
     render json: @post.destroy
-    rescue ActiveRecord::RecordNotFound
-       render json: { message: "Not Found", status: 404}, status: 404
   end
 
 private
