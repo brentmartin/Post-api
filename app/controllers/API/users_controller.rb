@@ -1,11 +1,11 @@
 class Api::UsersController < ApplicationController
   def index
-    # @users = User.all                                 # in controllers
+    @users = User.all
     render json: @users
   end
 
   def show
-    # @user = User.find(params[:id])                    # in controllers
+    @user = User.find(params[:id])
     render json: @user.to_json(include: :posts)
   end
 
@@ -26,7 +26,7 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    # User.update(params[:id])                            # in controllers
+    @user = User.find(params[:id])
     @user.update(user_params)
     render json: @user
     rescue ActiveRecord::RecordNotFound
@@ -34,7 +34,7 @@ class Api::UsersController < ApplicationController
   end
 
   def destroy
-    # @user = User.find(params[:id])                      # in controllers
+    @user = User.find(params[:id])
     @user.destroy
     render json: @user.destroy
     rescue ActiveRecord::RecordNotFound
