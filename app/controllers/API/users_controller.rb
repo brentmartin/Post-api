@@ -1,5 +1,4 @@
 class Api::UsersController < ApplicationController
-  # respond_to :json                                      # For Responder gem
   def index
     # @users = User.all                                 # in controllers
     render json: @users
