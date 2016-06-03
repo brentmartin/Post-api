@@ -10,9 +10,6 @@ class Api::PostsController < ApplicationController
     render json: @post
   end
 
-  def new
-    # @post = Post.new                                    # in controllers
-    render json: @post = Post.new
   end
 
   def create
@@ -22,8 +19,6 @@ class Api::PostsController < ApplicationController
     render json: @post = Post.new(post = params[:post][:body])
   end
 
-  def edit
-    # @post = Post.find(param[:id])                       # in controllers
     render json: @post
   end
 
